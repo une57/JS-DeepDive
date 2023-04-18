@@ -29,7 +29,7 @@ function makeOdd(num) {
 
 // 숫자 더하기
 function sum(num) {
-  let sum = 0
+  let sum = 0;
   for (let i = 1; i <= num; i++) {
     sum = sum + i
   }
@@ -38,13 +38,22 @@ function sum(num) {
 
 //가장 큰 수 찾기
 function bigNum(str) {
+  let max = str[0];
   for (let i = 0; i < str.length; i++) {
-    if (Number(str[i]) < Number(str[i + 1])) {
-      console.log(str[i + 1])
-    } else {
-      console.log(str[i])
+    if (str[i] > max) {
+      max = str[i];
     }
   }
-  console.log()
+  console.log(max);
 }
-bigNum(12345)
+
+//랜덤 숫자 만들기
+function random() {
+  let number = 50;
+  if(number < Math.floor(Math.random() * 101)){
+  console.log('Win');
+  }else {
+  console.log('Lose');
+  }
+}
+
