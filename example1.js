@@ -28,3 +28,12 @@ function makeOdd(num) {
     console.log(sum)
   }
 
+
+// 숫자 더하기
+  function sum(num) {
+    let sum = 0;
+    for (let i = 1; i <= num; i++) {
+    sum = sum + i;
+    }
+    console.log(sum);
+}
