@@ -59,91 +59,103 @@ function random() {
 
 //나누기 함수 만들기
 function num(a, b) {
-  return a / b;
+  return a / b
 }
 let num = function (a, b) {
-  return a / b;
+  return a / b
 }
-let num = (a, b) => a / b;
+let num = (a, b) => a / b
 
 //비밀번호 검증 함수
 let num = (pw1, pw2) => {
-  if (pw1.length >= 7 && pw1.length <= 15 && pw2.length >= 7 && pw2.length <= 15) {
-    if (pw1.toLowerCase() == pw2.toLowerCase()) {
-      console.log('true')
-    } else {
-      console.log('비밀번호를 다시 확인해주세요');
-    }
+  if (
+    pw1.length < 7 ||
+    pw1.length > 15 ||
+    pw2.length < 7 ||
+    pw2.length > 15
+  ) {
+    console.log("비밀번호는 8~16자리여야 합니다");
+  } else if (pw1.toLowerCase() == pw2.toLowerCase()) {
+    console.log("true");
   } else {
-    console.log('비밀번호는 8~16자리여야 합니다');
+    console.log("비밀번호를 다시 확인해주세요");
   }
-  };
+}
 
 //타이머
-setTimeout(() => console.log("자동 로그아웃"), 2000);
+setTimeout(() => console.log("자동 로그아웃"), 2000)
 
 //날짜 구하기
 let today = new Date();
-today = "오늘은 " + today.getFullYear() + "년 " + (today.getMonth() + 1) + "월 " + today.getDate() + "일 " + "입니다.";
+today =
+  "오늘은 " +
+  today.getFullYear() +
+  "년 " +
+  (today.getMonth() + 1) +
+  "월 " +
+  today.getDate() +
+  "일 " +
+  "입니다.";
 
 //배열 기능 활용
-if (email.indexOf('@') !== -1) {
-  if (email.indexOf(' ') !== -1) {
-      let result = '';
-      for (let i = 0; i < email.length; i++) {
-      if (email[i] !== ' ') {
+if (email.indexOf("@") !== -1) {
+  if (email.indexOf(" ") !== -1) {
+    let result = ""
+    for (let i = 0; i < email.length; i++) {
+      if (email[i] !== " ") {
         result = result + email[i].toLowerCase()
       }
     }
-    console.log(result);
-    }
+    console.log(result)
   }
+}
 
 //배열 기능 활용2
-let arr = email.split("");
-arr.splice(email.indexOf('@')-2, 2, "*", "*");
+let arr = email.split("")
+arr.splice(email.indexOf("@") - 2, 2, "*", "*")
 
-console.log(arr.join(''));
+console.log(arr.join(""))
 
 //filter
-let action = movies.filter((value) => value.genre === "액션");
-let cgv = movies.filter((value2) => value2.상영관 === "cgv");
+let action = movies.filter((value) => value.genre === "액션")
+let cgv = movies.filter((value2) => value2.상영관 === "cgv")
 let romance = movies.filter((value3) => {
- return value3.상영관 === "cgv" && value3.genre === "로맨스"
-});
+  return value3.상영관 === "cgv" && value3.genre === "로맨스"
+})
 
 //sort
 List.sort((a, b) => {
-  if(a.price > b.price) return 1;
-  if(a.price === b.price) return 0;
-  if(a.price < b.price) return -1;
-});
+  if (a.price > b.price) return 1
+  if (a.price === b.price) return 0
+  if (a.price < b.price) return -1
+})
 
 //타입 변환1
-for(let i = 0; i < stringData.length; i++)
-if(typeof(stringData[i]) !== 'string')
-stringData[i] = String(stringData[i])
+for (let i = 0; i < stringData.length; i++)
+  if (typeof stringData[i] !== "string") stringData[i] = String(stringData[i])
 
 //타입 변환2
-for(let i = 0; i < numberData.length; i++)
-if(typeof(numberData[i]) !== 'number') {
-  numberData.splice(i,1);
-  i--;
-}
+for (let i = 0; i < numberData.length; i++)
+  if (typeof numberData[i] !== "number") {
+    numberData.splice(i, 1)
+    i--
+  }
 
 //조건문1
-input1 = input1.toString().toLowerCase();
-input2 = input2.toString().toLowerCase();
+input1 = input1.toString().toLowerCase()
+input2 = input2.toString().toLowerCase()
 
-if(input1 === input2){
-console.log("회원가입을 축하합니다.")
+if (input1 === input2) {
+  console.log("회원가입을 축하합니다.")
 } else {
-console.log("비밀번호를 다시 확인해주세요.")
+  console.log("비밀번호를 다시 확인해주세요.")
 }
 
 //조건문2
-for(let i = 0; i < 3; i++){
-  console.log('현재 인기'+ fruits[i].number +'위 과일은 ' + fruits[i].title +'입니다.');
+for (let i = 0; i < 3; i++) {
+  console.log(
+    "현재 인기" + fruits[i].number + "위 과일은 " + fruits[i].title + "입니다."
+  )
 }
 
 //반복문
@@ -151,48 +163,80 @@ let count = 0;
 let sum = 0;
 let level = "";
 
-for(let i = 0; i < myShopping.length; i++){
-  if(myShopping[i].category === "의류"){
+for (let i = 0; i < myShopping.length; i++) {
+  if (myShopping[i].category === "의류") {
     count++;
-    sum = sum + myShopping[i].price;
+    sum = sum + myShopping[i].price
     if (count >= 0 && count <= 2) {
-      level = 'Bronze';
+      level = "Bronze";
     } else if (count >= 3 && count <= 4) {
-      level = 'Silver';
+      level = "Silver";
     } else if (count >= 5) {
-      level = 'Gold';
+      level = "Gold";
     }
   }
 }
-console.log('의류를 구매한 횟수는 총 '+ count +'회 금액은 ' + sum +'원이며 등급은 '+ level +'입니다.');
+console.log("의류를 구매한 횟수는 총 " + count + "회 금액은 " + sum + "원이며 등급은 " + level + "입니다.");
 
 //랜덤번호 생성
-return Math.floor(Math.random() * 9999)
+function random() {
+return Math.floor(Math.random() * 8999) + 1000;
+}
 
 //진행율
 let count = 0;
 let sum = 0;
 
-for(let i = 0; i < TodoList.length; i++){
-  if(TodoList[i].finish === true)
+for (let i = 0; i < TodoList.length; i++) {
+  if (TodoList[i].finish === true) 
   count++;
-  sum = Math.round(count / TodoList.length * 100)
+  sum = Math.round((count / TodoList.length) * 100);
 }
-console.log('총 ' + sum + '% 진행하셨습니다.')
+console.log("총 " + sum + "% 진행하셨습니다.");
 
-//함수
-if(email.indexOf('@') !== -1){
-  if(password.length >= 8 && password.length <= 16){
-    if(password === passwordCheck){
-      return '회원가입을 축하합니다.';
-    } else {
-      return "비밀번호를 다시 확인해주세요.";
-    }
-  } else {
+//회원가입 검증
+function validation(email, password, passwordCheck) {
+  if(email.indexOf('@') === -1){
+    return '이메일 주소를 다시 확인해주세요.';
+  } else if (password.length < 8 || password.length > 16) {
     return '비밀번호는 8~16자리여야 합니다.';
+  } else if (password !== passwordCheck) {
+    return "비밀번호를 다시 확인해주세요.";
+  } else {
+    return '회원가입을 축하합니다.';
   }
-}else {
-  return '이메일 주소를 다시 확인해주세요.';
+  }
+
+//인증번호 시간
+let minute = 1;
+let second = '00';
+
+let repeat = setInterval(timer, 1000);
+
+function timer() {
+  console.log(minute + ':' + second + " 남았습니다.")
+  second--;
+  if (second === -1) {
+  minute--;
+  second = 59;
+} else if (minute === 0 && second === 0){
+  clearInterval(repeat);
+} else if (second < 10) {
+  second = '0' + second;
+} 
 }
 
-//
+//경과 시간
+let post = "2022년 05월 02일";
+let oldDate = new Date(
+  Number(post.substr(post.indexOf('년')-4, 4)),
+  Number(post.substr(post.indexOf('월')-2, 2)-1),
+  Number(post.substr(post.indexOf('일')-2, 2))
+);
+let today = new Date();
+
+function sum() {
+if(oldDate < today) {
+console.log(Math.ceil((today.getTime() - oldDate.getTime()) / (1000 * 60 * 60 * 24)) + "일이 지났습니다.");
+}
+}
